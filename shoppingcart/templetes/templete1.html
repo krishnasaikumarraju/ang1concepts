@@ -1,0 +1,11 @@
+<h1>Mens Clothing</h1>
+<table><tr>
+    <td ng-repeat="x in ctrl1.items">
+        {{x.name}}<br>
+        <img src="{{x.imageFile}}" width="80" height="90"><br>
+    <span style="background-color: orange;">{{x.actualPrice}}</span>
+        <span style="background-color: orange;">{{x.offerPrice}}</span>
+        <span style="background-color: green;">{{x.actualPrice}}</span><br>
+        <input type="button" value="add to cart" ng-click="ctrl1.doshopping(x.id)">
+    </td>
+   </tr></table>

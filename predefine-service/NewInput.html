@@ -1,0 +1,61 @@
+    <form>
+        <table>
+            <tr>
+                <td colspan="2">
+                    <h1>New Student Data</h1>
+                </td>
+            </tr>
+           <tr>
+               <td>Roll Number</td>
+               <td><input ng-model="mc.student.roll"></td>
+           </tr>
+            <tr>
+                <td>Name</td>
+                <td>
+                    <input ng-model="mc.student.name">
+                </td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td>
+                    <input ng-model="mc.student.gender" name="gender" value="M" type="radio">MALE
+                    <input ng-model="mc.student.gender" name="gender" value="F" type="radio">FEMALE
+                </td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>
+                    <input ng-model="mc.student.email">
+                </td>
+            </tr>
+
+            <tr>
+                <td>City</td>
+                <td>
+                    <select ng-model="mc.student.city">
+                        <option value="0">Select</option>
+                        <option value="C">Chennai</option>
+                        <option value="B">Bangalore</option>
+                    </select>
+
+                </td>
+            </tr>
+
+            <tr>
+                <td>Marks</td>
+                <td>
+                    <input ng-model="mc.student.mark1" size="5">
+                    <input ng-model="mc.student.mark2"  size="5">
+                    <input ng-model="mc.student.mark3"  size="5" >
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <input type="button" ng-click="mc.addStudent()" value="ADD">
+                </td>
+            </tr>
+
+        </table>
+
+    </form>

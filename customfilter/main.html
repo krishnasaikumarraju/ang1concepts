@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="style/style.css" rel="stylesheet">
+    <script src="scripts/angular-1.3.16/angular.js"></script>
+    <script>
+    var app = angular.module("myapp", []);
+    app.controller("MyController", [function() {
+        this.gender = 'Male';
+        this.name = "Ameex"
+        this.mark = [45, 75, 90];
+        this.changegender = function() {
+            if (this.gender == 'Male')
+                this.gender = 'Female';
+            else
+                this.gender = 'Male';
+        }
+    }]);
+    app.filter("countfy", function() {
+        function innerdata(data) {
+            return data + '(' + data.length + ')'
+        }
+        return innerdata
+    })
+    app.filter("genderconverter", function() {
+        function f1(data, prefix) {
+            if (data == 'Male')
+                return prefix + 'He'
+            else
+                return prefix + 'She'
+        }
+        return f1;
+    })
+    app.filter("grade", function() {
+        function inner(data) {
+            var tvalue = [];
+
+            for (i = 0; i < data.length; i++) {
+                if (data[i] >= 90)
+                    tvalue.push("best");
+                else if (data[i] >= 50)
+                    tvalue.push("good");
+                else
+                    tvalue.push("poor");
+
+            }
+            return tvalue;
+        }
+        return inner
+    });
+    </script>
+</head>
+
+<body ng-app="myapp" ng-controller="MyController as mc">
+    <p ng-bind="mc.gender | genderconverter:'Gender'"></p>
+    <p ng-bind="mc.name|countfy"></p>
+    <p><span ng-repeat="x in mc.mark | grade">
+    {{x}}
+</span> </p>
+    <input type="button" value="change" ng-click="mc.changegender()">
+</body>
+
+</html>

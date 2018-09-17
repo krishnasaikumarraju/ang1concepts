@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="style/style.css" rel="stylesheet">
+    <script src="scripts/angular-1.3.16/angular.js"></script>
+    <script src="scripts/student.js"></script>
+    <script src="scripts/studentCreator.js"></script>
+    <script>
+        var app=angular.module("myapp",[])
+        app.controller("mycontroller",[function(){
+        this.emp1={id:101,name:'kamal',salary:'100000.00'}
+        this.emp2={id:102,name:'prakash',salary:'80000.00'}
+        this.emp3={id:103,name:'raja',salary:'60000.00'}
+/*this.emp1=this.s1;
+            this.emp1=this.s1;
+            this.emp1=this.s1;*/
+        }])
+app.directive("empdata",function(){
+    var obj={};
+    obj.restrict='A';
+    obj.templateUrl="templetefile/empcell.html";
+    obj.scope={
+        emp:'=dataid'
+    }
+    return obj;
+})
+    </script>
+</head>
+<body ng-app="myapp" ng-controller="mycontroller as mc">
+<table>
+    <tr>
+        <td empdata dataid="mc.emp1"></td>
+        <td empdata dataid="mc.emp2"></td>
+        <td empdata dataid="mc.emp3"></td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,60 @@
+    <form>
+        <table>
+            <tr>
+                <td colspan="2">
+                    <h1>Delete Student Data</h1>
+                </td>
+            </tr>
+           <tr>
+               <td>Roll Number</td>
+               <td><input ng-model="mc.student.roll" readonly></td>
+           </tr>
+            <tr>
+                <td>Name</td>
+                <td>
+                    <input ng-model="mc.student.name" readonly>
+                </td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td>
+                    <input ng-model="mc.student.gender" name="gender" value="M" type="radio" readonly>MALE
+                    <input ng-model="mc.student.gender" name="gender" value="F" type="radio" readonly>FEMALE
+                </td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>
+                    <input ng-model="mc.student.email" readonly>
+                </td>
+            </tr>
+
+            <tr>
+                <td>City</td>
+                <td>
+                    <select ng-model="mc.student.city" readonly>
+                        <option value="C">Chennai</option>
+                        <option value="B">Bangalore</option>
+                    </select>
+
+                </td>
+            </tr>
+
+            <tr>
+                <td>Marks</td>
+                <td>
+                    <input ng-model="mc.student.mark1" size="5" readonly>
+                    <input ng-model="mc.student.mark2"  size="5" readonly>
+                    <input ng-model="mc.student.mark3"  size="5"  readonly>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <input type="button" ng-click="mc.deleteStudent()" value="Confirm Delete">
+                </td>
+            </tr>
+
+        </table>
+
+    </form>

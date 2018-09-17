@@ -1,0 +1,72 @@
+body{
+    margin: 1cm;
+    font-family: Verdana;
+    font-size: 10pt;
+}
+
+table.output{
+    border:solid thin black;
+}
+
+tr.listhead{
+    background-color: navy;
+    color: white;
+    border: solid thin black;
+
+}
+
+th.col1{
+    width: 1cm;
+    height: 8mm;
+}
+th.col2{
+    width: 3cm;
+    height: 8mm;
+}
+th.col3{
+    width: 5cm;
+    height: 8mm;
+}
+th.col4{
+    width: 2cm;
+    height: 8mm;
+}
+th.col5{
+    width: 5cm;
+    height: 8mm;
+}
+th.col6{
+    width: 4cm;
+    height: 8mm;
+
+}
+th.col7{
+    width: 4cm;
+    height: 8mm;
+
+}
+th.col8{
+    width: 1cm;
+    height: 8mm;
+}
+
+th.col9{
+    width: 1cm;
+    height: 8mm;
+}
+
+th.col10{
+    width: 1cm;
+    height: 8mm;
+}
+th.col11{
+    width: 1cm;
+    height: 8mm;
+}
+
+tr.datarow{
+    height: 12mm;
+    border: solid thin black;
+    font-size: 8pt;
+}
+

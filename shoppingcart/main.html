@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<link href="styles/style1.css" rel="stylesheet">
+    <script src="scripts/angular-1.3.16/angular.js"></script>
+    <script src="scripts/angular-1.3.16/angular-route.js"></script>
+    <script src="scripts/Items.js"></script>
+    <script src="scripts/Categories.js"></script>
+    <script src="scripts/ShoppingCartItem.js"></script>
+    <script src="scripts/ShoppingCart.js"></script>
+
+    <script>
+        var app=angular.module("app",["ngRoute"]);
+        app.config(function($routeProvider){
+            $routeProvider
+                .when("/mc",{templateUrl:"templetes/templete1.html",controller:"menc as ctrl1"})
+                .when("/Wc",{templateUrl:"templetes/templete2.html",controller:"womenc as ctrl2"})
+                .when("/ma",{templateUrl:"templetes/templete3.html",controller:"mena as ctrl3"})
+                .when("/wa",{templateUrl:"templetes/templete4.html",controller:"womena as ctrl4"})
+                .when("/sc",{templateUrl:"templetes/templete5.html",controller:"shopping as ctrl5"})
+        }
+        )
+        app.controller("menc",[function () {
+            this.category=category2;
+            this.items=this.category.items;
+            this.doshopping=function (id) {
+            var s_item=this.category.findItem(id)
+                var shoppingitemobj=new ShoppingCartItem(s_item,1);
+            shopping_cart.addToCart(shoppingitemobj);
+            }
+        }])
+        app.controller("womenc",[function () {
+            this.category=category3;
+            this.items=this.category.items;
+            this.doshopping=function (id) {
+                var s_item=this.category.findItem(id)
+                var shoppingitemobj=new ShoppingCartItem(s_item,1);
+                shopping_cart.addToCart(shoppingitemobj);
+            }
+        }])
+        app.controller("mena",[function () {
+            this.category=category1;
+            this.items=this.category.items;
+            this.doshopping=function (id) {
+                var s_item=this.category.findItem(id)
+                var shoppingitemobj=new ShoppingCartItem(s_item,1);
+                shopping_cart.addToCart(shoppingitemobj);
+            }
+        }])
+        app.controller("womena",[function () {
+            this.category=category4;
+            this.items=this.category.items;
+        }])
+
+        app.controller("shopping",[function () {
+        this.shoppingCart=shopping_cart;
+        this.totalAmount=shopping_cart.getActualTotal();
+        this.offerTotal=shopping_cart.getOfferTotal();
+        this.savings=shopping_cart.getSavingsAmount();
+        this.shoppedItems=shopping_cart.shoppedItems;
+        }])
+    </script>
+</head>
+<body ng-app="app">
+<table>
+    <tr class="menuBar">
+        <td class="menuCell"><a href="#/mc">Mens clothing</a> </td>
+        <td class="menuCell"><a href="#/Wc">WoMens clothing</a> </td>
+        <td class="menuCell"><a href="#/ma">Mens Accessories</a> </td>
+        <td class="menuCell"><a href="#/wa">WomMens Accessories</a> </td>
+        <td class="menuCell"><a href="#/sc">Show Cart</a> </td>
+    </tr>
+</table>
+<ng-view></ng-view>
+</body>
+</html>

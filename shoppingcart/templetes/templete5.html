@@ -1,0 +1,10 @@
+<h1>Show Cart</h1>
+<table style="border:1px solid red">
+    <tr ng-repeat="x in ctrl5.shoppedItems">
+        <td>{{$index+1}}</td>
+    <td>{{x.item.name}}</td>
+        <td>{{x.item.actualPrice}}</td>
+        <td>{{x.item.offerPrice}}</td>
+    <td>{{x.quantity}}</td>
+    </tr>
+</table>
